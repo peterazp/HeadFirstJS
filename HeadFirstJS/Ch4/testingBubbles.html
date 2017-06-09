@@ -12,14 +12,28 @@
       			41, 53, 55, 61, 51, 44];
   
   var arrayLength = scores.length; // 36
-  var i = 0;
-  while(i < arrayLength) {
+  var highScore = 0;
+  for (var i = 0; i < scores.length; i++){
 	  document.write("Bubble Solution #"  + i + " score:" + " " + scores[i] + "<br>");
-	  i = i + 1;
+	  if (scores[i] > highScore) {
+		  highScore = scores[i];
+  	}
   }
-  
+    
   document.write("<br>");
   document.write("Bubble tests: " + arrayLength + "<br>");
+  
+  
+  var highestSolutions = [];
+  for (var i = 0; i < scores.length; i++) {
+	  
+	  if (scores[i] == highScore) {
+		  highestSolutions.push(i);
+	  }
+  }
+  document.write("Highest Bubble score: " + highScore + "<br>");
+  document.write("Highest Solutions were: " + highestSolutions + "<br>");
+
   
   </script>
 </head>
